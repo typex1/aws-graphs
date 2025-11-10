@@ -114,3 +114,32 @@ graph LR
     style GWL fill:#fff3e0
     style LP fill:#e8f5e8
 ```
+## 5. AWS Transit Gateway Hub-and-Spoke Architecture
+
+```mermaid
+graph TD
+    TGW[Transit Gateway<br/>Hub]
+    
+    VPC1[Production VPC<br/>10.0.0.0/16]
+    VPC2[Development VPC<br/>10.1.0.0/16]
+    VPC3[Staging VPC<br/>10.2.0.0/16]
+    VPC4[Shared Services VPC<br/>10.3.0.0/16]
+    
+    DX[Direct Connect<br/>On-Premises]
+    VPN[VPN Connection<br/>Branch Office]
+    
+    TGW --- VPC1
+    TGW --- VPC2
+    TGW --- VPC3
+    TGW --- VPC4
+    TGW --- DX
+    TGW --- VPN
+    
+    style TGW fill:#ff9800
+    style VPC1 fill:#4caf50
+    style VPC2 fill:#2196f3
+    style VPC3 fill:#9c27b0
+    style VPC4 fill:#ff5722
+    style DX fill:#607d8b
+    style VPN fill:#795548
+```
