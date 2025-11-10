@@ -105,9 +105,9 @@ graph LR
     GWL[Gottfried Wilhelm Leibniz]
     LP[List of Paradoxes]
     
-    NP -->|Hop 1| GNE
-    GNE -->|Hop 2| GWL
-    GWL -->|Hop 3| LP
+    NP -->|links to| GNE
+    GNE -->|links to| GWL
+    GWL -->|links to| LP
     
     style NP fill:#e3f2fd
     style GNE fill:#f3e5f5
@@ -126,14 +126,12 @@ graph TD
     VPC4[Shared Services VPC<br/>10.3.0.0/16]
     
     DX[Direct Connect<br/>On-Premises]
-    VPN[VPN Connection<br/>Branch Office]
     
     TGW --- VPC1
     TGW --- VPC2
     TGW --- VPC3
     TGW --- VPC4
     TGW --- DX
-    TGW --- VPN
     
     style TGW fill:#ff9800
     style VPC1 fill:#4caf50
@@ -141,5 +139,4 @@ graph TD
     style VPC3 fill:#9c27b0
     style VPC4 fill:#ff5722
     style DX fill:#607d8b
-    style VPN fill:#795548
 ```
